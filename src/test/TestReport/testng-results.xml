@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-26T15:18:19 ICT" name="All Test Suite" finished-at="2023-08-26T15:20:34 ICT" duration-ms="134591">
+    <groups>
+    </groups>
+    <test started-at="2023-08-26T15:18:19 ICT" name="Test_1" finished-at="2023-08-26T15:19:55 ICT" duration-ms="96044">
+      <class name="pageTest.OderCompleteTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pageTest.OderCompleteTest@54c562f7]" started-at="2023-08-26T15:18:19 ICT" name="setUp" finished-at="2023-08-26T15:18:25 ICT" duration-ms="6478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="end2EndTest()[pri:0, instance:pageTest.OderCompleteTest@54c562f7]" started-at="2023-08-26T15:18:25 ICT" name="end2EndTest" finished-at="2023-08-26T15:19:55 ICT" duration-ms="89284" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end2EndTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:pageTest.OderCompleteTest@54c562f7]" started-at="2023-08-26T15:19:55 ICT" name="tearDown" finished-at="2023-08-26T15:19:55 ICT" duration-ms="203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- pageTest.OderCompleteTest -->
+    </test> <!-- Test_1 -->
+    <test started-at="2023-08-26T15:19:55 ICT" name="Test_2" finished-at="2023-08-26T15:20:34 ICT" duration-ms="38516">
+      <class name="pageTest.AddRemoveItemTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:pageTest.AddRemoveItemTest@460d0a57]" started-at="2023-08-26T15:19:55 ICT" name="setUp" finished-at="2023-08-26T15:19:59 ICT" duration-ms="4085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="end2EndTest()[pri:0, instance:pageTest.AddRemoveItemTest@460d0a57]" started-at="2023-08-26T15:19:59 ICT" name="end2EndTest" finished-at="2023-08-26T15:20:33 ICT" duration-ms="34304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end2EndTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:pageTest.AddRemoveItemTest@460d0a57]" started-at="2023-08-26T15:20:33 ICT" name="tearDown" finished-at="2023-08-26T15:20:34 ICT" duration-ms="122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- pageTest.AddRemoveItemTest -->
+    </test> <!-- Test_2 -->
+  </suite> <!-- All Test Suite -->
+</testng-results>
