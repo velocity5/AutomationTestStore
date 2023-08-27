@@ -1,30 +1,25 @@
 package pageTest;
 
-import base.basePage;
+import base.Hooks;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+
 import org.testng.annotations.Test;
 import pageObject.*;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
-public class OderCompleteTest extends basePage {
+
+public class OderCompleteTest extends Hooks {
 	public OderCompleteTest() throws IOException {
 		super();
 	}
-	@BeforeTest
-	public void setUp(){
-		driver = getDriver();
-		driver.get(getUrl());
-	}
+
 	@Test
 	public void end2EndTest() throws InterruptedException, IOException {
-		Homepage HPage = new Homepage(driver);
+		Homepage HPage = new Homepage();
 		Thread.sleep(1000);
 		HPage.getCookies().click();
 		Thread.sleep(1000);
@@ -32,10 +27,10 @@ public class OderCompleteTest extends basePage {
 		Thread.sleep(2000);
 		HPage.getTestStoreLink().click();
 		Thread.sleep(1000);
-		Productpage PPage = new Productpage(driver);
+		Productpage PPage = new Productpage();
 		PPage.getProduct1().click();
 		Thread.sleep(1000);
-		ProductDetailpage PDPage = new ProductDetailpage(driver);
+		ProductDetailpage PDPage = new ProductDetailpage();
 		// interact with dropdown value
 		Select option = new Select(PDPage.getSize());
 		option.selectByVisibleText("L");
@@ -43,11 +38,11 @@ public class OderCompleteTest extends basePage {
 		PDPage.getCartBtn().click();
 		Thread.sleep(3000);
 
-		ShopContentPanel cPanel = new ShopContentPanel(driver);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(200));
+		ShopContentPanel cPanel = new ShopContentPanel();
+		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(cPanel.getProceedBtn()));
 		cPanel.getProceedBtn().click();
-		ShoppingCartpage cartPage = new ShoppingCartpage(driver);
+		ShoppingCartpage cartPage = new ShoppingCartpage();
 		Thread.sleep(2000);
 		cartPage.getPromoCode().click();
 		Thread.sleep(2000);
@@ -56,7 +51,7 @@ public class OderCompleteTest extends basePage {
 		Thread.sleep(2000);
 		cartPage.getCheckout().click();
 
-		PersonalInfo custInfo = new PersonalInfo(driver);
+		PersonalInfo custInfo = new PersonalInfo();
 		custInfo.getRadioBtn1().click();
 		Thread.sleep(1000);
 		custInfo.getFirstname().sendKeys("Wei-Chen");
@@ -69,7 +64,7 @@ public class OderCompleteTest extends basePage {
 		Thread.sleep(2000);
 		custInfo.getContBtn().click();
 
-		AddressesPage addPage = new AddressesPage(driver);
+		AddressesPage addPage = new AddressesPage();
 		Thread.sleep(2000);
 		addPage.getAdd().sendKeys("123 Main Street");
 		Thread.sleep(1000);
@@ -82,13 +77,13 @@ public class OderCompleteTest extends basePage {
 		Thread.sleep(3000);
 		addPage.getContBtn().click();
 
-		ShippingMethod shipPer = new ShippingMethod(driver);
+		ShippingMethod shipPer = new ShippingMethod();
 		Thread.sleep(1000);
 		shipPer.getTextArea().sendKeys("If I am not in, pls leave the parcel outside the door.");
 		Thread.sleep(2000);
 		shipPer.getConstBtn().click();
 
-		Payment payMen = new Payment(driver);
+		Payment payMen = new Payment();
 		Thread.sleep(1000);
 		payMen.getWirePayment().click();
 		Thread.sleep(1000);
@@ -97,9 +92,5 @@ public class OderCompleteTest extends basePage {
 		payMen.getAgreeBtn().click();
 		Thread.sleep(3000);
 	}
-	@AfterTest
-	public void tearDown(){
-		driver.close();
-		driver = null;
-	}
+
 }

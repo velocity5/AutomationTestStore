@@ -1,10 +1,13 @@
 package pageObject;
 
+import base.basePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PersonalInfo {
+import java.io.IOException;
+
+public class PersonalInfo extends basePage {
 	WebDriver driver;
 	By RadioMr = By.cssSelector("[class] .radio-inline:nth-of-type(1)");
 	By RadioMrs = By.cssSelector("[class] .radio-inline:nth-of-type(2)");
@@ -17,34 +20,43 @@ public class PersonalInfo {
 
 	By ContBtn = By.cssSelector("form#customer-form  button[name='continue']");
 
-	public PersonalInfo (WebDriver driver) {
-		this.driver = driver;
+	public PersonalInfo () throws IOException {
+		super();
 	}
-	public WebElement getRadioBtn1(){
+	public WebElement getRadioBtn1() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(RadioMr);
 	}
-	public WebElement getRadioBtn2(){
+	public WebElement getRadioBtn2() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(RadioMrs);
 	}
-	public WebElement getFirstname(){
+	public WebElement getFirstname() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(FirstName);
 	}
-	public WebElement getLastname(){
+	public WebElement getLastname() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(LastName);
 	}
-	public WebElement getMail(){
+	public WebElement getMail() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(Email);
 	}
-	public WebElement getCheckBox1(){
+	public WebElement getCheckBox1() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(Checkbox1);
 	}
-	public WebElement getCheckBox2(){
+	public WebElement getCheckBox2() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(Checkbox2);
 	}
-	public WebElement getCheckBox3(){
+	public WebElement getCheckBox3() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(Checkbox3);
 	}
-	public WebElement getContBtn(){
+	public WebElement getContBtn() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(ContBtn);
 	}
 }

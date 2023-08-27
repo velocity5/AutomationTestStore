@@ -1,10 +1,13 @@
 package pageObject;
 
+import base.basePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Productpage {
+import java.io.IOException;
+
+public class Productpage extends basePage {
 	public WebDriver driver;
 	By product1ne = By.cssSelector("[alt='Hummingbird printed t-shirt']");
 	By product2wo = By.cssSelector("[alt='Brown bear printed sweater']");
@@ -15,31 +18,39 @@ public class Productpage {
 	By product7evn = By.linkText("Mug The Adventure Begins");
 	By productEi8ht = By.linkText("Mug Today Is A Good Day");
 
-	public Productpage(WebDriver driver) {
-		this.driver = driver;
+	public Productpage() throws IOException {
+		super();
 	}
-	public WebElement getProduct1(){
+	public WebElement getProduct1() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(product1ne);
 	}
-	public WebElement getProduct2(){
+	public WebElement getProduct2() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(product2wo);
 	}
-	public WebElement getProduct3(){
+	public WebElement getProduct3() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(productThr3e);
 	}
-	public WebElement getProduct4(){
+	public WebElement getProduct4() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(product4our);
 	}
-	public WebElement getProduct5(){
+	public WebElement getProduct5() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(product5vie);
 	}
-	public WebElement getProduct6(){
+	public WebElement getProduct6() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(product6ix);
 	}
-	public WebElement getProduct7(){
+	public WebElement getProduct7() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(product7evn);
 	}
-	public WebElement getProduct8(){
+	public WebElement getProduct8() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(productEi8ht);
 	}
 }

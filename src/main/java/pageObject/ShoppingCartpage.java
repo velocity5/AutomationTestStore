@@ -1,10 +1,13 @@
 package pageObject;
 
+import base.basePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ShoppingCartpage {
+import java.io.IOException;
+
+public class ShoppingCartpage extends basePage {
 	public WebDriver driver;
 	By promoCode = By.linkText("Have a promo code?");
 	By promoTxtBox = By.cssSelector("input[name='discount_name']");
@@ -13,28 +16,35 @@ public class ShoppingCartpage {
 	By delProduct2 = By.cssSelector(".cart-items .cart-item:nth-of-type(2) .float-xs-left");
 	By totalAmt = By.cssSelector(".cart-total .value");
 	By checkOut = By.linkText("PROCEED TO CHECKOUT");
-	public ShoppingCartpage (WebDriver driver) {
-		this.driver = driver;
+	public ShoppingCartpage () throws IOException {
+		super();
 	}
-	public WebElement getPromoCode(){
+	public WebElement getPromoCode() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(promoCode);
 	}
-	public WebElement getPromoTxtBox(){
+	public WebElement getPromoTxtBox() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(promoTxtBox);
 	}
-	public WebElement addPromo(){
+	public WebElement addPromo() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(addPromoBtn);
 	}
-	public WebElement delProductOne(){
+	public WebElement delProductOne() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(delProduct1);
 	}
-	public WebElement delProductTwo(){
+	public WebElement delProductTwo() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(delProduct2);
 	}
-	public WebElement getTotalAmt(){
+	public WebElement getTotalAmt() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(totalAmt);
 	}
-	public WebElement getCheckout(){
+	public WebElement getCheckout() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(checkOut);
 	}
 }

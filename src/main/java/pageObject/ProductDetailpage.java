@@ -1,10 +1,13 @@
 package pageObject;
 
+import base.basePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class ProductDetailpage {
+import java.io.IOException;
+
+public class ProductDetailpage extends basePage {
 	public WebDriver driver;
 	By selectSize = By.cssSelector("select#group_1");
 	By selectDimension = By.cssSelector("select#group_3");
@@ -14,25 +17,31 @@ public class ProductDetailpage {
 	By AddCartBtn = By.xpath("//button[contains(@class,\"add\")]");
 
 
-	public ProductDetailpage(WebDriver driver){
-		this.driver = driver;
+	public ProductDetailpage() throws IOException {
+		super();
 	}
-	public WebElement getSize(){
+	public WebElement getSize() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(selectSize);
 	}
-	public WebElement getDim(){
+	public WebElement getDim() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(selectDimension);
 	}
-	public WebElement getIncre(){
+	public WebElement getIncre() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(increQttBtn);
 	}
-	public WebElement getDecre(){
+	public WebElement getDecre() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(decreQttBtn);
 	}
-	public WebElement getBackHome(){
+	public WebElement getBackHome() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(backHome);
 	}
-	public WebElement getCartBtn(){
+	public WebElement getCartBtn() throws IOException {
+		this.driver = getDriver();
 		return driver.findElement(AddCartBtn);
 	}
 
